@@ -33,7 +33,8 @@ endif()
 
 LIST(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake_modules)
 
-find_package(OpenCV 3)
+#find_package(OpenCV 3)
+find_package(OpenCV 3.2.0 PATHS /home/fmd/opencv/opencv3.2_installed)
 if(NOT OpenCV_FOUND)
    find_package(OpenCV 2.4.3 QUIET)
    if(NOT OpenCV_FOUND)
@@ -44,7 +45,8 @@ endif()
 MESSAGE("OPENCV VERSION:")
 MESSAGE(${OpenCV_VERSION})
 
-find_package(Eigen3 3.1.0 REQUIRED)
+#find_package(Eigen3 3.1.0 REQUIRED)
+find_package(Eigen3 3.3.8 PATHS /home/fmd/eigen-3.3.8_installed)
 find_package(Pangolin REQUIRED)
 
 include_directories(
