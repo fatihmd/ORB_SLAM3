@@ -2703,6 +2703,7 @@ bool Tracking::Relocalization()
             int nInliers;
             bool bNoMore;
 
+            //TODO: Change iterate function with SQPNP
             MLPnPsolver* pSolver = vpMLPnPsolvers[i];
             cv::Mat Tcw = pSolver->iterate(5,bNoMore,vbInliers,nInliers);
 
