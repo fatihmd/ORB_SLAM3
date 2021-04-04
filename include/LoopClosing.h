@@ -25,7 +25,6 @@
 #include "Atlas.h"
 #include "ORBVocabulary.h"
 #include "Tracking.h"
-
 #include "KeyFrameDatabase.h"
 
 #include <boost/algorithm/string.hpp>

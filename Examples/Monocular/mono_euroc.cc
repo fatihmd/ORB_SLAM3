@@ -26,7 +26,7 @@
 #include<opencv2/core/core.hpp>
 
 #include<System.h>
-
+using namespace cv;
 using namespace std;
 
 void LoadImages(const string &strImagePath, const string &strPathTimes,
@@ -91,7 +91,8 @@ int main(int argc, char **argv)
         {
 
             // Read image from file
-            im = cv::imread(vstrImageFilenames[seq][ni],CV_LOAD_IMAGE_UNCHANGED);
+//            im = cv::imread(vstrImageFilenames[seq][ni],CV_LOAD_IMAGE_UNCHANGED);
+            im = cv::imread(vstrImageFilenames[seq][ni],IMREAD_UNCHANGED);
             double tframe = vTimestampsCam[seq][ni];
 
             if(im.empty())
