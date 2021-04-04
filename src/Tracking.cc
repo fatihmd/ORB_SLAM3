@@ -2707,6 +2707,21 @@ bool Tracking::Relocalization()
             MLPnPsolver* pSolver = vpMLPnPsolvers[i];
             cv::Mat Tcw = pSolver->iterate(5,bNoMore,vbInliers,nInliers);
 
+            //SQPNP Implementation
+            cout<<"SQPNP Implementation starts -------------------------------------------------"<<endl;
+            vvpMapPointMatches[0][0]->PrintObservations();
+            cout<<endl;
+            cv::Mat camera_matrix = (cv::Mat_<double>(3,3) << mCurrentFrame.fx, 0, mCurrentFrame.cx, 0 , mCurrentFrame.fy, mCurrentFrame.cy, 0, 0, 1);
+            //cv::Mat dist_coeffs = cv::Mat::zeros(4,1,cv::DataType<double>::type); // Assuming no lens distortion
+            cv::Mat dist_coeffs = mCurrentFrame.mDistCoef;
+            cout << "Camera Matrix " << endl << camera_matrix << endl;
+            // Output rotation and translation
+            cv::Mat rotation_vector; // Rotation in axis-angle form
+            cv::Mat translation_vector;
+            // Solve for pose
+            //cv::solvePnP(model_points, image_points, camera_matrix, dist_coeffs, rotation_vector, translation_vector);
+            
+            
             // If Ransac reachs max. iterations discard keyframe
             if(bNoMore)
             {

@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
 
     if(argc < 5)
     {
+        cerr << endl << argc;
         cerr << endl << "Usage: ./mono_inertial_euroc path_to_vocabulary path_to_settings path_to_sequence_folder_1 path_to_times_file_1 (path_to_image_folder_2 path_to_times_file_2 ... path_to_image_folder_N path_to_times_file_N) " << endl;
         return 1;
     }
@@ -121,8 +122,8 @@ int main(int argc, char *argv[])
     cout << "IMU data in the sequence: " << nImu << endl << endl;*/
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
-    // argv[1]:vocab argv[2]:settings
-    ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::IMU_MONOCULAR, true);
+    // argv[1]:vocab argv[2]:settings - sensor - map viewer
+    ORB_SLAM3::System SLAM(argv[1],argv[2],ORB_SLAM3::System::IMU_MONOCULAR, false);
 
     int proccIm=0;
     for (seq = 0; seq<num_seq; seq++)
@@ -212,8 +213,8 @@ int main(int argc, char *argv[])
     // Save camera trajectory
     if (bFileName)
     {
-        const string kf_file =  "kf_" + string(argv[argc-1]) + ".txt";
-        const string f_file =  "f_" + string(argv[argc-1]) + ".txt";
+        const string kf_file =  "/home/fmd/ORB_SLAM3/debug/kf_" + string(argv[argc-1]) + ".txt";
+        const string f_file =  "/home/fmd/ORB_SLAM3/debug/f_" + string(argv[argc-1]) + ".txt";
         SLAM.SaveTrajectoryEuRoC(f_file);
         SLAM.SaveKeyFrameTrajectoryEuRoC(kf_file);
     }

@@ -95,6 +95,10 @@ pathDatasetEuroc='/home/fmd/Datasets/Euroc' #Example, it is necesary to change i
 # Monocular-Inertial Examples
 echo "Launching MH01 with Monocular-Inertial sensor"
 ./Examples/Monocular-Inertial/mono_inertial_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular-Inertial/EuRoC.yaml "$pathDatasetEuroc"/MH_01_EASY ./Examples/Monocular-Inertial/EuRoC_TimeStamps/MH01.txt dataset-MH01_monoi
+#gdb ./Examples/Monocular-Inertial/mono_inertial_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular-Inertial/EuRoC.yaml /home/fmd/Datasets/Euroc/V1_02_MEDIUM ./Examples/Monocular-Inertial/EuRoC_TimeStamps/V102.txt dataset-V102_monoi
+#break /home/fmd/ORB_SLAM3/src/Tracking.cc:2714
+# ./Examples/Monocular/mono_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular/EuRoC.yaml /home/fmd/Datasets/Euroc/MH_05_DIFFICULT ./Examples/Monocular/EuRoC_TimeStamps/MH05.txt dataset-MH05_mono
+
 
 # echo "Launching MH02 with Monocular-Inertial sensor"
 # ./Examples/Monocular-Inertial/mono_inertial_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular-Inertial/EuRoC.yaml "$pathDatasetEuroc"/MH02 ./Examples/Monocular-Inertial/EuRoC_TimeStamps/MH02.txt dataset-MH02_monoi
