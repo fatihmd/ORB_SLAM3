@@ -95,8 +95,9 @@ pathDatasetEuroc='/home/fmd/Datasets/Euroc' #Example, it is necesary to change i
 # Monocular-Inertial Examples
 echo "Launching MH01 with Monocular-Inertial sensor"
 ./Examples/Monocular-Inertial/mono_inertial_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular-Inertial/EuRoC.yaml "$pathDatasetEuroc"/MH_01_EASY ./Examples/Monocular-Inertial/EuRoC_TimeStamps/MH01.txt dataset-MH01_monoi
-#gdb ./Examples/Monocular-Inertial/mono_inertial_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular-Inertial/EuRoC.yaml /home/fmd/Datasets/Euroc/V1_02_MEDIUM ./Examples/Monocular-Inertial/EuRoC_TimeStamps/V102.txt dataset-V102_monoi
-#break /home/fmd/ORB_SLAM3/src/Tracking.cc:2714
+#gdb ./Examples/Monocular-Inertial/mono_inertial_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular-Inertial/EuRoC.yaml /home/fmd/Datasets/Euroc/V1_03_DIFFICULT ./Examples/Monocular-Inertial/EuRoC_TimeStamps/V103.txt /home/fmd/Datasets/Euroc/V1_03_DIFFICULT ./Examples/Monocular-Inertial/EuRoC_TimeStamps/V103.txt dataset-V103_monoi
+#break /home/fmd/ORB_SLAM3/src/Tracking.cc:2715
+#break /home/fmd/ORB_SLAM3/Examples/Monocular-Inertial/mono_inertial_euroc.cc:127
 # ./Examples/Monocular/mono_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular/EuRoC.yaml /home/fmd/Datasets/Euroc/MH_05_DIFFICULT ./Examples/Monocular/EuRoC_TimeStamps/MH05.txt dataset-MH05_mono
 # fix relocalization commit https://github.com/UZ-SLAMLab/ORB_SLAM3/pull/244/commits/392ed4b78d641ab461a80e496d263e913de2b556
 
