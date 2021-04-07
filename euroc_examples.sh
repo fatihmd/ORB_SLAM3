@@ -100,6 +100,7 @@ echo "Launching MH01 with Monocular-Inertial sensor"
 #break /home/fmd/ORB_SLAM3/Examples/Monocular-Inertial/mono_inertial_euroc.cc:127
 # ./Examples/Monocular/mono_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular/EuRoC.yaml /home/fmd/Datasets/Euroc/MH_05_DIFFICULT ./Examples/Monocular/EuRoC_TimeStamps/MH05.txt dataset-MH05_mono
 # fix relocalization commit https://github.com/UZ-SLAMLab/ORB_SLAM3/pull/244/commits/392ed4b78d641ab461a80e496d263e913de2b556
+# gdbgui - sudo pip3 install --upgrade gdbgui
 
 # echo "Launching MH02 with Monocular-Inertial sensor"
 # ./Examples/Monocular-Inertial/mono_inertial_euroc ./Vocabulary/ORBvoc.txt ./Examples/Monocular-Inertial/EuRoC.yaml "$pathDatasetEuroc"/MH02 ./Examples/Monocular-Inertial/EuRoC_TimeStamps/MH02.txt dataset-MH02_monoi
